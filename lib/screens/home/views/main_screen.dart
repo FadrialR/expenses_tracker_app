@@ -50,7 +50,7 @@ class MainScreen extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "Fadrial R",
+                          "Luciel",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -65,7 +65,7 @@ class MainScreen extends StatelessWidget {
                     onPressed: () {}, icon: Icon(CupertinoIcons.settings))
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.width / 2,
@@ -192,6 +192,106 @@ class MainScreen extends StatelessWidget {
                   )
                 ],
               ),
+            ),
+            const SizedBox(height: 40),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Transactions',
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Theme.of(context).colorScheme.onBackground,
+                      fontWeight: FontWeight.bold),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Text(
+                    'View All',
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Theme.of(context).colorScheme.outline,
+                        fontWeight: FontWeight.w400),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: 6,
+                  itemBuilder: (context, int i) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      Container(
+                                        width: 50,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: Colors.yellow[700],
+                                          shape: BoxShape.circle,
+                                        ),
+                                      ),
+                                      const Icon(
+                                        Icons.food_bank,
+                                        color: Colors.white,
+                                      )
+                                    ],
+                                  ),
+                                  const SizedBox(width: 12),
+                                  Text(
+                                    'Food',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onBackground,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  Text(
+                                    '-\Rp 45.000',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onBackground,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                  Text(
+                                    'Today',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .outline,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
             )
           ],
         ),
